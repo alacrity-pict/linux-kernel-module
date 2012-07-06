@@ -1,0 +1,17 @@
+Steps Followed for Creating,Compiling and Inserting a Kernel Module:
+
+1.We have created a program using kernel.h and module.h libraries
+  having, init_module() and cleanup_module() functions.
+  Also printk() functions for displaying the message in Log file.
+2.Then, creating a Makefile for compiling the kernel module. Type the command :
+  make Makefile
+  This command generates program_name.ko file.
+  For obtaining more information about the generated .ko file type "modinfo program_name.ko"
+3.For inserting the module into kernel we used : 
+  insmod ./program_name.ko  
+4.For verifying whether the module is inserted or not we can do following :
+  a.Type lsmod command in the terminal
+  b.Check the /var/log/messages file which contains log of all the activities.
+5.For unloading or removing the module from kernel :
+  rmmod program_name
+6.Again check the /var/log/messages file for verification.
